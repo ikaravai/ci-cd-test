@@ -18,4 +18,10 @@ class CiCdTestApplicationTests {
         assertEquals(2, 1 + 1);
     }
 
+    @Test
+    void megaTest() {
+        log.info(() -> "--- Executing Mega TEST ---");
+        assertEquals(5+5, 10);
+    }
+
 }
