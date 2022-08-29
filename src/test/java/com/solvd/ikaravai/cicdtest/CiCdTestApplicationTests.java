@@ -29,7 +29,7 @@ class CiCdTestApplicationTests {
 
     @Test
     void dummyTest() {
-        log.info(() -> "--- Executing Dummy TEST ---");
+        log.info(() -> "--- Executing Updated Dummy TEST ---");
         Random rand = new Random();
         var x = rand.nextInt(10);
         assertTrue(x <= 100);
