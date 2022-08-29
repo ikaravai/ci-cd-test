@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: ci-cd-test
-          image: ikaravai/ci-cd-test
+          image: ikaravai/ci-cd-test:3
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8100
