@@ -9,7 +9,7 @@ pipeline {
     agent any
 
     tools {
-        gradle 'Gradle 7.5.1'
+//         gradle 'Gradle 7.5.1'
     }
 
     stages {
@@ -21,8 +21,8 @@ pipeline {
 
         stage('Gradle Build') {
             steps {
-                sh 'gradle clean build'
-//                 sh './gradlew build'
+//                 sh 'gradle clean build'
+                sh './gradlew build'
             }
         }
 
