@@ -5,7 +5,10 @@ import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 class CiCdTestApplicationTests {
@@ -21,7 +24,15 @@ class CiCdTestApplicationTests {
     @Test
     void megaTest() {
         log.info(() -> "--- Executing Mega TEST ---");
-        assertEquals(5+5, 10);
+        assertEquals(10, 5 + 5);
+    }
+
+    @Test
+    void dummyTest() {
+        log.info(() -> "--- Executing Dummy TEST ---");
+        Random rand = new Random();
+        var x = rand.nextInt(10);
+        assertTrue(x <= 100);
     }
 
 }
