@@ -1,0 +1,39 @@
+apiServer: apps/v1
+kind: Deployment
+metadata:
+  name: ci-cd-test
+  namespace: cicdtest
+  labels:
+    app: ci-cd-test
+spec:
+  selector:
+    matchLabels:
+      app: ci-cd-test
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: ci-cd-test
+    spec:
+      containers:
+        - name: ci-cd-test
+          image: ikaravai/ci-cd-test
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8100
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ci-cd-test-service
+  namespace: cicdtest
+spec:
+  selector:
+    app: ci-cd-test
+  ports:
+    - protocol: "TCP"
+      port: 8100
+      targetPort: 8100
+      nodePort: 31111
+  type: NodePort
