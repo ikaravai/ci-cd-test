@@ -9,7 +9,7 @@ pipeline {
     agent any
 
     tools {
-        gradle 'gradle_7_5_1'
+        gradle 'Gradle 7.5.1'
     }
 
     stages {
