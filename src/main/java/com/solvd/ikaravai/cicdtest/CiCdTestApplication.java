@@ -3,6 +3,7 @@ package com.solvd.ikaravai.cicdtest;
 import com.solvd.ikaravai.cicdtest.bubblesort.BubbleSort;
 import com.solvd.ikaravai.cicdtest.mergesort.MergeSort;
 import com.solvd.ikaravai.cicdtest.mergesort.MergeSortJava;
+import com.solvd.ikaravai.cicdtest.selectionsort.SelectionSort;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -46,9 +47,9 @@ public class CiCdTestApplication {
             log.info("--- Bubble sort ---");
             log.info(Arrays.toString(bubbleInput));
             // Selection Sort
-
+            SelectionSort selectionSort = new SelectionSort();
             int[] selectionInput = {840, 263, 427, 963, 895, 813, 292, 596, 449, 302, 268, 717, 569, 34, 966, 128, 991, 658, 609, 615};
-
+            selectionSort.selectionSort(selectionInput);
             log.info("--- Selection sort ---");
             log.info(Arrays.toString(selectionInput));
         };
