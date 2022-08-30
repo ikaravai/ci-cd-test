@@ -8,7 +8,7 @@ public class BubbleSort {
             needIterations = false;
             for (int i = 1; i < input.length; i++) {
                 if (input[i] < input[i - 1]) {
-                    swap(input, i-1, i);
+                    swap(input, i - 1, i);
                     needIterations = true;
                 }
             }

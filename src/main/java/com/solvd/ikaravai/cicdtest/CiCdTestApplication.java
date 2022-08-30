@@ -5,7 +5,9 @@ import com.solvd.ikaravai.cicdtest.insertionsort.InsertionSort;
 import com.solvd.ikaravai.cicdtest.insertionsort.InsertionSortRecursive;
 import com.solvd.ikaravai.cicdtest.mergesort.MergeSort;
 import com.solvd.ikaravai.cicdtest.mergesort.MergeSortJava;
+import com.solvd.ikaravai.cicdtest.quicksort.QuickSortPivotFirst;
 import com.solvd.ikaravai.cicdtest.selectionsort.SelectionSort;
+import com.solvd.ikaravai.cicdtest.shuttlesort.ShuttleSort;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -66,6 +68,18 @@ public class CiCdTestApplication {
             insertionSort.insertionSort(insertionRecursiveInput);
             log.info("--- Insertion Recursive sort ---");
             log.info(Arrays.toString(insertionRecursiveInput));
+            // Shuttle sort
+            ShuttleSort shuttleSort = new ShuttleSort();
+            int[] shuttleSortInput = {14, 892, 146, 111, 705, 343, 747, 768, 662, 245, 41, 101, 390, 431, 958, 928, 29, 413, 335, 84};
+            shuttleSort.shuttleSort(shuttleSortInput);
+            log.info("--- Shuttle sort ---");
+            log.info(Arrays.toString(shuttleSortInput));
+            // Quick sort
+            QuickSortPivotFirst quickSortPivotFirst = new QuickSortPivotFirst();
+            int[] quickSortInput = {291, 632, 821, 447, 749, 67, 245, 304, 462, 879, 290, 42, 274, 133, 641, 891, 242, 417, 734, 603};
+            quickSortPivotFirst.quickSort(quickSortInput, 0, quickSortInput.length - 1);
+            log.info("--- Quick sort ---");
+            log.info(Arrays.toString(quickSortInput));
         };
     }
 }
