@@ -4,16 +4,16 @@ public class InsertionSort {
 
     public void insertionSort(int[] input) {
         int currValue;
-        int lastLesserNumberIndex;
+        int checkForLesserNumberIndex;
         for (int i = 0; i < input.length; i++) {
             currValue = input[i];
-            lastLesserNumberIndex = i - 1;
-            for (; lastLesserNumberIndex >= 0; lastLesserNumberIndex--) {
-                if (currValue < input[lastLesserNumberIndex]) {
-                    input[lastLesserNumberIndex + 1] = input[lastLesserNumberIndex];
+            checkForLesserNumberIndex = i - 1;
+            for (; checkForLesserNumberIndex >= 0; checkForLesserNumberIndex--) {
+                if (currValue < input[checkForLesserNumberIndex]) {
+                    input[checkForLesserNumberIndex + 1] = input[checkForLesserNumberIndex];
                 } else break;
             }
-            input[lastLesserNumberIndex + 1] = currValue;
+            input[checkForLesserNumberIndex + 1] = currValue;
         }
     }
 }

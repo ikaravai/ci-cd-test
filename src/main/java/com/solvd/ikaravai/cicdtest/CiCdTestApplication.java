@@ -2,6 +2,7 @@ package com.solvd.ikaravai.cicdtest;
 
 import com.solvd.ikaravai.cicdtest.bubblesort.BubbleSort;
 import com.solvd.ikaravai.cicdtest.insertionsort.InsertionSort;
+import com.solvd.ikaravai.cicdtest.insertionsort.InsertionSortRecursive;
 import com.solvd.ikaravai.cicdtest.mergesort.MergeSort;
 import com.solvd.ikaravai.cicdtest.mergesort.MergeSortJava;
 import com.solvd.ikaravai.cicdtest.selectionsort.SelectionSort;
@@ -59,6 +60,12 @@ public class CiCdTestApplication {
             insertionSort.insertionSort(insertionInput);
             log.info("--- Insertion sort ---");
             log.info(Arrays.toString(insertionInput));
+            // Insertion sort recursive
+            InsertionSortRecursive insertionSortRecursive = new InsertionSortRecursive();
+            int[] insertionRecursiveInput = {512, 14, 536, 659, 278, 836, 942, 542, 396, 133, 184, 125, 265, 23, 595, 950, 716, 835, 177, 794};
+            insertionSort.insertionSort(insertionRecursiveInput);
+            log.info("--- Insertion Recursive sort ---");
+            log.info(Arrays.toString(insertionRecursiveInput));
         };
     }
 }
