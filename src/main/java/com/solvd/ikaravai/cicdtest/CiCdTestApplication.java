@@ -1,6 +1,7 @@
 package com.solvd.ikaravai.cicdtest;
 
 import com.solvd.ikaravai.cicdtest.bubblesort.BubbleSort;
+import com.solvd.ikaravai.cicdtest.insertionsort.InsertionSort;
 import com.solvd.ikaravai.cicdtest.mergesort.MergeSort;
 import com.solvd.ikaravai.cicdtest.mergesort.MergeSortJava;
 import com.solvd.ikaravai.cicdtest.selectionsort.SelectionSort;
@@ -52,6 +53,12 @@ public class CiCdTestApplication {
             selectionSort.selectionSort(selectionInput);
             log.info("--- Selection sort ---");
             log.info(Arrays.toString(selectionInput));
+            // Insertion sort
+            InsertionSort insertionSort = new InsertionSort();
+            int[] insertionInput = {512, 14, 536, 659, 278, 836, 942, 542, 396, 133, 184, 125, 265, 23, 595, 950, 716, 835, 177, 794};
+            insertionSort.insertionSort(insertionInput);
+            log.info("--- Insertion sort ---");
+            log.info(Arrays.toString(insertionInput));
         };
     }
 }

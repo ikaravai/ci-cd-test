@@ -3,11 +3,16 @@ package com.solvd.ikaravai.cicdtest.selectionsort;
 public class SelectionSort {
 
     public void selectionSort(int[] input) {
+        int posMin;
         for (int i = 0; i < input.length; i++) {
-            for (int j = i; j < input.length; j++) {
-                if (input[j] < input[i]) {
-                    swap(input, i, j);
+            posMin = i;
+            for (int j = i + 1; j < input.length; j++) {
+                if (input[j] < input[posMin]) {
+                    posMin = j;
                 }
+            }
+            if (posMin != i) {
+                swap(input, i, posMin);
             }
         }
     }
