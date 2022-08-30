@@ -36,7 +36,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: ikaravai/ci-cd-test
-        tags: v1.0.0, latest
+        tags: v1.0.${{ github.run.number }}, latest
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
