@@ -65,7 +65,7 @@ public class CiCdTestApplication {
             // Insertion sort recursive
             InsertionSortRecursive insertionSortRecursive = new InsertionSortRecursive();
             int[] insertionRecursiveInput = {512, 14, 536, 659, 278, 836, 942, 542, 396, 133, 184, 125, 265, 23, 595, 950, 716, 835, 177, 794};
-            insertionSort.insertionSort(insertionRecursiveInput);
+            insertionSortRecursive.insertionSortRecursive(insertionRecursiveInput, insertionRecursiveInput.length);
             log.info("--- Insertion Recursive sort ---");
             log.info(Arrays.toString(insertionRecursiveInput));
             // Shuttle sort

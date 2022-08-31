@@ -11,10 +11,11 @@ public class InsertionSortRecursive {
 
         int currentValue = input[checkingIndexes - 1];
         int currentSortedIndex = checkingIndexes - 2;
-        while (currentSortedIndex >= 0 && input[checkingIndexes] > currentValue) {
+        while (currentSortedIndex >= 0 && input[currentSortedIndex] > currentValue) {
             input[currentSortedIndex + 1] = input[currentSortedIndex];
             currentSortedIndex--;
         }
         input[currentSortedIndex + 1] = currentValue;
     }
+
 }
