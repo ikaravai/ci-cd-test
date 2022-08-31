@@ -1,6 +1,7 @@
 package com.solvd.ikaravai.cicdtest;
 
 import com.solvd.ikaravai.cicdtest.bubblesort.BubbleSort;
+import com.solvd.ikaravai.cicdtest.heapsort.HeapSort;
 import com.solvd.ikaravai.cicdtest.insertionsort.InsertionSort;
 import com.solvd.ikaravai.cicdtest.insertionsort.InsertionSortRecursive;
 import com.solvd.ikaravai.cicdtest.mergesort.MergeSort;
@@ -35,7 +36,7 @@ public class CiCdTestApplication {
     public CommandLineRunner test() {
         return (args) -> {
             // Scuffed merge freestyle
-            MergeSort myScuffedSortAlg = new MergeSort();
+            var myScuffedSortAlg = new MergeSort();
             int[] myInput = {112, 540, 778, 760, 217, 601, 918, 513, 83, 767, 468, 279, 445, 854, 161, 320, 552, 97, 442, 527};
             log.info("--- Scuffed merge ---");
             log.info(Arrays.toString(myScuffedSortAlg.mergeSort(myInput, myInput.length)));
@@ -45,47 +46,54 @@ public class CiCdTestApplication {
             log.info("--- Ok merge ---");
             log.info(Arrays.toString(anotherInput));
             // Bubble sort
-            BubbleSort bubbleSort = new BubbleSort();
+            var bubbleSort = new BubbleSort();
             int[] bubbleInput = {928, 31, 942, 84, 1, 52, 783, 52, 138, 52, 436, 120, 440, 186, 54, 738, 129, 652, 54, 944};
             bubbleSort.bubbleSort(bubbleInput);
             log.info("--- Bubble sort ---");
             log.info(Arrays.toString(bubbleInput));
             // Selection Sort
-            SelectionSort selectionSort = new SelectionSort();
+            var selectionSort = new SelectionSort();
             int[] selectionInput = {840, 263, 427, 963, 895, 813, 292, 596, 449, 302, 268, 717, 569, 34, 966, 128, 991, 658, 609, 615};
             selectionSort.selectionSort(selectionInput);
             log.info("--- Selection sort ---");
             log.info(Arrays.toString(selectionInput));
             // Insertion sort
-            InsertionSort insertionSort = new InsertionSort();
+            var insertionSort = new InsertionSort();
             int[] insertionInput = {512, 14, 536, 659, 278, 836, 942, 542, 396, 133, 184, 125, 265, 23, 595, 950, 716, 835, 177, 794};
             insertionSort.insertionSort(insertionInput);
             log.info("--- Insertion sort ---");
             log.info(Arrays.toString(insertionInput));
             // Insertion sort recursive
-            InsertionSortRecursive insertionSortRecursive = new InsertionSortRecursive();
+            var insertionSortRecursive = new InsertionSortRecursive();
             int[] insertionRecursiveInput = {512, 14, 536, 659, 278, 836, 942, 542, 396, 133, 184, 125, 265, 23, 595, 950, 716, 835, 177, 794};
             insertionSortRecursive.insertionSortRecursive(insertionRecursiveInput, insertionRecursiveInput.length);
             log.info("--- Insertion Recursive sort ---");
             log.info(Arrays.toString(insertionRecursiveInput));
             // Shuttle sort
-            ShuttleSort shuttleSort = new ShuttleSort();
+            var shuttleSort = new ShuttleSort();
             int[] shuttleSortInput = {14, 892, 146, 111, 705, 343, 747, 768, 662, 245, 41, 101, 390, 431, 958, 928, 29, 413, 335, 84};
             shuttleSort.shuttleSort(shuttleSortInput);
             log.info("--- Shuttle sort ---");
             log.info(Arrays.toString(shuttleSortInput));
             // Quick sort
-            QuickSortPivotFirst quickSortPivotFirst = new QuickSortPivotFirst();
+            var quickSortPivotFirst = new QuickSortPivotFirst();
             int[] quickSortInput = {291, 632, 821, 447, 749, 67, 245, 304, 462, 879, 290, 42, 274, 133, 641, 891, 242, 417, 734, 603};
             quickSortPivotFirst.quickSort(quickSortInput, 0, quickSortInput.length - 1);
             log.info("--- Quick sort ---");
             log.info(Arrays.toString(quickSortInput));
             // Quick sort 2
-            QuickSortPivotFirst quickSortPivotFirstTwo = new QuickSortPivotFirst();
+            var quickSortPivotFirstTwo = new QuickSortPivotFirst();
             int[] quickSortInputTwo = {40, 20, 30, 10};
             quickSortPivotFirstTwo.quickSort(quickSortInputTwo, 0, quickSortInputTwo.length - 1);
-            log.info("--- Quick sort ---");
+            log.info("--- Quick sort 2 ---");
             log.info(Arrays.toString(quickSortInputTwo));
+            // Heap sort
+            var heapSort = new HeapSort();
+            int[] heapSortInput = {30, 10, 60, 70, 20, 50, 40};
+//            int[] heapSortInput = {332, 911, 606, 616, 126, 927, 125, 88, 450, 94, 228, 810, 271, 92, 866, 752, 661, 4, 970, 718};
+            heapSort.heapSort(heapSortInput);
+            log.info("--- Heap sort ---");
+            log.info(Arrays.toString(heapSortInput));
         };
     }
 }
