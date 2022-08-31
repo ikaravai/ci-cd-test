@@ -15,22 +15,29 @@ public class QuickSortPivotFirst {
         int pivotTargetIndex = low;
         for (int j = low + 1; j <= high; j++) {
             if (input[j] < input[low]) {
-                swap(input, ++pivotTargetIndex, j);
+                ++pivotTargetIndex;
+                if (pivotTargetIndex != j) {
+                    swap(input, pivotTargetIndex, j);
+                }
+
+
             }
         }
-        swap(input, low, pivotTargetIndex);
+        if (low != pivotTargetIndex) {
+            swap(input, low, pivotTargetIndex);
+        }
         return pivotTargetIndex;
     }
 
-    private void swap(int[] arr, int low, int pivot){
-        int tmp = arr[low];
-        arr[low] = arr[pivot];
-        arr[pivot] = tmp;
-    }
-        // NOT THREAD SAFE LOL
-//    private void swap(int[] array, int firstIndex, int secondIndex) {
-//        array[firstIndex] = array[firstIndex] + array[secondIndex];
-//        array[secondIndex] = array[firstIndex] - array[secondIndex];
-//        array[firstIndex] = array[firstIndex] - array[secondIndex];
+//    private void swap(int[] arr, int low, int pivot){
+//        int tmp = arr[low];
+//        arr[low] = arr[pivot];
+//        arr[pivot] = tmp;
 //    }
+//         NOT THREAD SAFE LOL ???
+    private void swap(int[] array, int firstIndex, int secondIndex) {
+        array[firstIndex] = array[firstIndex] + array[secondIndex];
+        array[secondIndex] = array[firstIndex] - array[secondIndex];
+        array[firstIndex] = array[firstIndex] - array[secondIndex];
+    }
 }

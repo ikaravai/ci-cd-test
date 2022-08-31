@@ -80,6 +80,12 @@ public class CiCdTestApplication {
             quickSortPivotFirst.quickSort(quickSortInput, 0, quickSortInput.length - 1);
             log.info("--- Quick sort ---");
             log.info(Arrays.toString(quickSortInput));
+            // Quick sort 2
+            QuickSortPivotFirst quickSortPivotFirstTwo = new QuickSortPivotFirst();
+            int[] quickSortInputTwo = {40, 20, 30, 10};
+            quickSortPivotFirstTwo.quickSort(quickSortInputTwo, 0, quickSortInputTwo.length - 1);
+            log.info("--- Quick sort ---");
+            log.info(Arrays.toString(quickSortInputTwo));
         };
     }
 }
